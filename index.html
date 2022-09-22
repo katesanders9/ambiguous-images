@@ -1,1 +1,694 @@
-first commit
+<!DOCTYPE html>
+<html lang="en">
+<style>
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+  #title {
+    margin: 0px 100px 0px 100px;
+/*    -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ff0000; */
+text-shadow: 2px 2px 2px rgba(0,73,135,1);
+  }
+body {
+  background-color:  lightgrey;
+}
+.top-container {
+  text-align: center;
+  padding-top: 5%;
+  width: 100%;
+
+background: rgb(0,73,135);
+background: linear-gradient(90deg, rgba(0,73,135,1) 0%, rgba(0,215,255,1) 100%);
+  color: white;
+  font-size: 80px;
+  height: 50vh;
+/*  transition: height 300ms linear; */
+}
+
+.header {
+  text-align:  center;
+  font-size: 30px;
+  color: white;
+  height:  100px;
+  width:  100%;
+  top:  0;
+background: rgb(0,73,135);
+background: linear-gradient(90deg, rgba(0,73,135,1) 0%, rgba(0,215,255,1) 100%);
+z-index: 99;
+}
+
+.headercontent {
+
+  opacity: 0;
+  transition: opacity 0.1s linear;
+
+}
+
+.stickytext {
+
+  opacity: 1;
+}
+
+/* Page content */
+.content {
+  padding-top: 30px;
+}
+
+.sticky {
+  position:  fixed;
+  top:  0;
+  width:  100%;
+}
+
+.sticky + .content {
+  padding-top: 130px;
+}
+
+.column {
+  float: left;
+  font-size: 20px;
+  text-align: right;
+  width: 17%;
+  position: fixed;
+  opacity: 0;
+  transition: opacity 0.7s linear;
+  height:  100vh;
+  margin: 200px 0px 0px 0px;
+  top:  0;
+  z-index:  -1;
+
+}
+
+.stickycolumn {
+  opacity: 1;
+}
+
+.maincolumn {
+  float: left;
+  width:  50%;
+  margin-left: 25%;
+  padding-top: 50px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.h {
+  color: rgba(0,73,135,1);
+}
+
+.par {
+  color: rgba(0,73,135,1);
+  font-size: 20px;
+}
+
+.space {
+  height: 75px;
+}
+
+.nav {
+  transition: color 0.3s linear;
+}
+
+.nav:hover {
+  text-decoration: none;
+  color:  rgba(0,215,255,1);
+}
+
+.active {
+  color:  rgba(0,215,255,1);
+}
+
+.btn1 {
+  border-radius: 8px;
+  border:  2px solid;
+  color: rgba(0,73,135,.75); 
+  transition: all 0.1s linear;
+  box-shadow: 1px 1px 1px;
+  background-color: rgb(255,255,255,0.75); 
+}
+
+.btn2 {
+  border-radius: 8px;
+  border:  2px solid;
+  transition: all 0.1s linear;
+  background-color: rgb(0,0,0,0); 
+
+}
+
+.btn1:hover {
+  color: rgba(0,73,135,1); 
+  background-color: rgba(255,255,255,.9);
+  box-shadow: 3px 3px 2px rgba(0,73,135,1);
+}
+
+.btn2:hover {
+  box-shadow: 2px 2px 2px rgba(0,73,135,1);
+  background-color: rgb(255,255,255,0.15); 
+}
+
+.navigation:visited {
+  text-decoration: none;
+  color: rgba(0,73,135,1);
+}
+
+.bim {
+  opacity: 1;
+  width:100%;
+  margin:25px 5px 25px 5px;
+  transition: all 0.2s linear;
+  height: fixed;
+    border-radius: 12px;
+  box-shadow: 1px 1px 1px rgba(0,73,135,.4);
+}
+
+.bim.ihov {
+  opacity: 0.35;
+}
+
+.imwrap {
+  width: 33%;
+    float: left;
+      position: relative;
+  text-align: center;
+  color: white;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: -25px;
+
+}
+
+.lab {
+  color:  rgba(0,73,135,1);
+  font-weight: bold;
+  z-index: 98;
+  font-size: 40px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.lab.hov {
+  opacity: 1;
+}
+
+.boxwrap {
+  background-color: rgba(150,215,255,.5);
+  height: 100%;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color:  rgba(0,160,220,1);
+}
+
+.link:hover {
+  text-decoration: none;
+  color:  rgba(0,215,255,1);
+}
+
+.tc1 {
+  float: left;
+  font-size: 20px;
+  width: 33%;
+  text-align: center;
+}
+
+.tc2 {
+  float: left;
+  font-size: 20px;
+  width: 5%;
+  text-align: center;
+  vertical-align: center;
+  height: 150px;
+  margin-top: 50px;
+}
+
+.cim {
+  width: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.gim {
+    width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.boxwrap2 {
+  background-color: rgba(150,215,255,.5);
+  height: 100%;
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+ul {
+  text-align: left;
+  color:  rgba(0,160,220,1);
+}
+
+.code1 {
+  background-color: rgba(150,215,255,.0);
+  color: rgba(0,73,135,1);
+}
+
+.codewrap {
+    padding: 10px 20px 10px 20px;
+}
+
+table {
+  border: 1px solid;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid;
+  width: 15%;
+}
+
+td {
+  text-align: center;
+}
+
+.highlight {
+  color:  rgba(0,215,255,1);
+  font-weight: 600;
+}
+
+.arrow {
+  position: absolute;
+  text-align: center;
+  top: 45%;
+  font-size: 120px;
+  color: white;
+  width: 100%;
+  text-align: center;
+  opacity: 1;
+  color: rgb(255,255,255,0.75); 
+  transition: opacity 0.4s linear;
+}
+
+.arrow.hide {
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.4s linear;
+}
+
+
+</style>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Ambiguous Images for Robust Visual Event Classification</title>
+  </head>
+
+  <body>
+    <div class="arrow" id="arrow">▾</div>
+    <div class="body">
+    <div class="top-container">
+      <div class="titlewrap">
+      <p id="title">🦑 SQUID-E: Ambiguous Images for Robust Visual Event Classification</p>
+    </div>
+      <button type="button" class="btn1" style="margin: 0px 20px 0px 20px; font-size:30px; width:300px; border-color:rgba(0,73,135,1); border-width: 0px; " id="p1" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+      <button type="button" class="btn1" style="margin: 0px 20px 0px 20px; font-size:30px; width:300px; border-color:rgba(0,73,135,1); border-width: 0px; " id="d1" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
+      <!--<p style="color: white;text-shadow: 2px 2px 2px rgba(0,73,135,1);font-size:40px;margin-top:30px">▼</p>-->
+    </div>
+<div class="header" id="header">
+  <div class="headercontent" id="headercontent">
+  <p style="margin-bottom: 0px">🦑 SQUID-E: Ambiguous Images for Robust Visual Event Classification</p>
+  <button type="button" class="btn2 " style="margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white" id="p2" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+      <button type="button" class="btn2" style="margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white" id="d2" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
+</div>
+</div>
+
+    <div class="content" id="content">
+      <img src="website-im.png" style="width:100%;margin-top:-20px;float:center; padding-bottom:30px" id="introduction">
+  <div class="column" id="c1">
+      <nav class="navigation">
+  <a class="nav" id="am" href="#introduction">INTRODUCTION</a>
+<br>
+  <a class="nav" id="bm" href="#dataset">DATASET</a>
+<br>
+  <a class="nav" id="cm" href="#applications">APPLICATIONS</a>
+<br>
+  <a class="nav" id="dm" href="#addinfo">ADDITIONAL INFO</a>
+<br>
+</nav>
+  </div>
+  <div class="maincolumn" id="c2">
+    <div class="space" id="1" style="height:0px"></div>
+    <h1 class="h">Why ambiguous images?</h1>
+    <div class="par">In our day to day lives, we encounter a wide range of visual input. Much of this input is <b>ambiguous</b>. For example, consider the three images shown below: These are three frames randomly selected from a <a class="link" href="https://www.youtube.com/watch?v=7wgDnx9iQfY">YouTube video of a birthday party</a>.<br><br> If asked if these images depict a birthday party, most humans could confidently give an answer. However, if a human was given just one of these images, <b>they might need to give a more detailed answer to effectively convey their judgments</b>. One option is to provide a quantitative "certainty score" that an image belongs to a specific classification:<br><br>
+
+    <div class="boxwrap">
+    <b><div style="padding: 15px 20px 0px 20px">Hover over each image to see the median reported human confidence that each image belongs to a video of a birthday party.</div></b>
+    <div class="im-banner"><div class="imwrap" id="i1"><div class="lab" id="l1">6%</div><img src="b1.png" class="bim" id="b1"></div><div class="imwrap" id="i2"><div class="lab" id="l2">81%</div><img src="b2.png" class="bim" id="b2"></div><div class="imwrap" id="i3"><div class="lab" id="l3">100%</div><img src="b3.png" class="bim" id="b3"></div></div> <div style="padding: 0px 10px 0px 10px"><div style="color: rgba(0,215,255,0);">.</div></div></div>
+    Vision models do not typically have this capacity. Models are trained on tasks that assume a human could achieve perfect performance, and so <b>these models are not robust to ambiguous visual input</b>.<br><br>
+
+
+    <div id="dataset"></div>
+    Ignoring ambiguity in data can lead to consequences in downstream applications. For example, autonomous agents that collaborate with humans in tasks like manufacturing must accurately assess ambiguous event-based data (such as visual input showing what its human partner is doing) to make behavioral decisions and ensure user safety. <b>This requires an ability to produce reliable outputs under perceptual data-driven uncertainty.</b></div>
+
+    <div class="space" id="2"></div>
+    <h1 class="h">The SQUID-E Dataset</h1>
+    <div class="par"> To address ambiguous images in computer vision, we propose a novel dataset construction method for uncertainty-aware image recognition. We use this framework to build <b>SQUID-E</b> (the Scenes with Quantitative Uncertainty Information Dataset for Events), a collection of noisy images extracted from videos. <br><br>
+
+    <div class="par">
+    <h3 class="h">Datset Statistics</h3>
+    </div>
+
+
+<div class="tc1" style="font-size:20px;width:50%">
+
+<b>
+  <ul>
+    <li>12,000 ambiguous images</li>
+    <li>20 distinct event types</li>
+    <li>2,000 online videos scraped</li>
+  </ul>
+</div>
+<div class="tc1" style="font-size:20px;width:50%">
+    <ul>
+    <li>1,800 human-labeled images</li>
+    <li>10,800 human judgments</li>
+    <li>6 human-labeled event types</li>
+  </ul>
+</div>
+</b>
+
+<div class="space" id="3"></div><br><br>
+
+<h3 class="h">Datset Construction</h3>
+
+<div class="boxwrap">
+    <div class="im-banner" style="padding-top:10px;text-align:center"><h3><b>①  <i>VIDEO COLLECTION</i></b></h3>
+
+<div class="par" style="font-size:16px;text-align:center;padding:0px 20px 0px 20px">
+The distribution of still images found in typical corpora are often intentionally selected to maximize saliency. To produce a dataset of noisier, more ambiguous visual data, we extracted images from videos. First, we scraped YouTube for videos that depict target event types. 
+</div><br>
+
+      <img style="padding-left:30px;width:80%;padding:0px;margin-bottom:0px;box-shadow: 1px 1px 1px rgba(0,73,135,.4);border-radius: 2px;" src="YT.png" class="cim"><div style="text-align:center;"><h1 style="font-size:80px">⬇</h1></div><h3><b>②  <i>AMBIGUOUS FRAME EXTRACTION</i></h3></b>
+
+<div class="par" style="font-size:16px;text-align:center;padding:0px 20px 0px 20px">
+Six frames were extracted from each video using a combination of frame sampling
+and clustering to produce a collection of visually diverse images from each video.
+</div>
+
+    <div class="tc1"><img src="y1.png" class="cim"></div>
+    <div class="tc1"><img src="y2.png" class="cim"></div>
+    <div class="tc1"><img src="y3.png" class="cim"></div></div>
+
+<div style="text-align:center;">
+    <h1 style="font-size:80px">⬇</h1>
+    <h3><b>③  <i>UNCERTAINTY JUDGMENT LABELING</i></h3></b>
+
+<div class="par" style="font-size:16px;text-align:center;padding:0px 20px 0px 20px">
+Annotations were collected for a set of six event types using Amazon Mechanical
+Turk. Annotators were provided with an event prompt and six images from the dataset. They were then told to rate their confidence that each image belonged to a video depicting the prompted event type using sliding bars ranging from 0% to 100%.
+</div>
+
+  </div>
+
+<div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  04%<br>👤💬  14%<br>👤💬  27%</div></div>
+  <div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  20%<br>👤💬  50%<br>👤💬  68%</div></div>
+  <div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  97%<br>👤💬  100%<br>👤💬  100%</div></div>
+
+<div class="space" id="3"></div><div class="space" id="3"></div><br>
+</div>
+
+
+
+<!-- <div id="testc">hi</div> -->
+
+
+    <h3 class="h">Human Uncertainty Judgments</h3>
+    <div class="par">
+      The <b>Spearman correlation</b> of human uncertainty judgments collected for SQUID-E is <b>0.673</b>, and the correlation of annotator scores when the same annotator was asked to re-rate the same image months later is <b>0.788</b>.<br><br>
+
+      Possible reasons for inter-annotator variance include:<br><br>
+    </div>
+
+        <div class="tc1" style="padding:0px 20px 70px 20px"><img src="a1.png" style="height:100px;"><br><br><b>Visual Attention</b><br>
+        <p style="font-size:14px;text-align:justify">A person’s visual attention can affect their perceptual input and uncertainty calculations. We hypothesize that this phenomenon affected the human judgments in our task, since the images in SQUID-E can often be classified as multiple event types depending on where an annotator’s visual attention is focused.</p></div>
+
+    <div class="tc1" style="padding:0px 20px 70px 20px"><img src="a2.png" style="height:100px;"><br><br><b>Background Knowledge</b><br>
+<p style="font-size:14px;text-align:justify">Many images require an annotator to hold specific knowledge to classify them accurately, and so people may annotate these images differently depending on their personal knowledge bases. Necessary background knowledge is often cultural, or otherwise related to current events or history.</p></div>
+
+    <div class="tc1" style="padding:0px 20px 90px 20px;"><img src="a3.png" style="height:100px;"><br><br><b>Quantification Strategies</b><br><p style="font-size:14px;text-align:justify">The way humans calculate probability is inherently imperfect: Studies detail heuristics and psychological biases that influence human judgments that are not necessarily caused by external factors. This type of internal factor, divorced from visual input and knowledge bases, may affect annotator score discrepancy.</p></div></div><br><br>
+
+    <div class="space" id="4"></div><div class="space" id="4"></div>
+    <br><br>
+
+    <h1 class="h" id="applications">Practical Applications</h1>
+    <div class="par">
+    Here, we show a few examples of what SQUID-E can be used for in the context of computer vision. More details regarding experiments can be found in <a class="link" href=https://openreview.net/forum?id=6Hl7XoPNAVX>the paper</a>.<br><br>
+
+    <h3>Training on SQUID-E for Robust Event Classification</h3>
+    We found that, compared to training on standard, "high certainty data" (with and without data augmentation), training on SQUID-E can result in models that are more robust to other ambiguous images at test time. However, the model trained on SQUID-E underperformed on high-certainty images, indicating a tradeoff between high- and low-certainty performance.
+
+    <div style="text-align: center;"><img src="g1.jpeg" class="gim"></div><br>
+
+    <h3>Evaluating Verb Prediction Models</h3>
+    Evaluation on SQUID-E allows for assessment of how models handle images with varying levels of certainty. We binned accuracy scores of SoTA situation recognition models on human certainty judgment scores for detailed analysis.<br><br>
+
+    <table>
+  <tr>
+    <td><b>Model</b></td>
+    <td><b>0-20%</b></td>
+    <td><b>20-40%</b></td>
+    <td><b>40-60%</b></td>
+    <td><b>60-80%</b></td>
+    <td><b>80-100%</b></td>
+    <td><b>Avg.</b></td>
+  </tr>
+  <tr>
+    <td><b>JSL</b></td>
+    <td>.00</td>
+    <td>.07</td>
+    <td>.17</td>
+    <td>.22</td>
+    <td>.52</td>
+    <td>.35</td>
+  </tr>
+  <tr>
+    <td><b>GSRTR</b></td>
+    <td>.02</td>
+    <td>.09</td>
+    <td>.22</td>
+    <td>.25</td>
+    <td>.59</td>
+    <td>.41</td>
+  </tr>
+<tr>
+    <td><b>CoFormer</b></td>
+    <td>.02</td>
+    <td>.13</td>
+    <td>.22</td>
+    <td>.23</td>
+    <td>.58</td>
+    <td>.40</td>
+  </tr>
+</table><br><br>
+
+<!--    <table>
+  <tr>
+    <th>Model</th>
+    <th>0-20%</th>
+    <th>20-40%</th>
+    <th>40-60%</th>
+    <th>60-80%</th>
+    <th>80-100%</th>
+    <th>Avg.</th>
+  </tr>
+  <tr>
+    <th>JSL</th>
+    <th>.11</th>
+    <th>.43</th>
+    <th>.49</th>
+    <th>.72</th>
+    <th>.86</th>
+    <th>.66</th>
+  </tr>
+  <tr>
+    <th>GSRTR</th>
+    <th>.11</th>
+    <th>.55</th>
+    <th>.54</th>
+    <th>.77</th>
+    <th>.88</th>
+    <th>.70</th>
+  </tr>
+<tr>
+    <th>CoFormer</th>
+    <th>.09</th>
+    <th>.42</th>
+    <th>.58</th>
+    <th>.82</th>
+    <th>.91</th>
+    <th>.70</th>
+  </tr>
+</table> -->
+
+    <h3>Evaluating Uncertainty Quantification Methods</h3>
+    SQUID-E can also be used to directly evaluate uncertainty quantification approaches by comparing model confidence scores to human uncertainty judgments. Experiment results indicate that direct confidence comparisons align with traditional calibration assessment metrics.<br>
+
+<div style="  text-align: center;">
+    <img src="g2.jpeg" class="gim">
+<!--    <img src="g3.png" class="gim"> -->
+  </div>
+
+    </div>
+
+    <div class="space" id="5"></div>
+    <h1 class="h" id="addinfo">Additional Info</h1>
+    <div class="par">
+          <h3>Future Work</h3>
+      The illustrated benefits of a model like SQUID-E motivates the creation of larger-scale ambiguous image datasets. It also prompts future work such as training models to learn individual annotators' uncertainty scoring functions, and developing human-centric model calibration methods using human judgments.<br><br>
+
+
+      <h3>Citation & Limitations</h3>
+
+      If you find this work useful in your research, please consider citing the paper:<br><br>
+      <div class="boxwrap">
+        <div class="codewrap">
+      <code class="code1" style="font-size:14px">@article{sandersambiguous,<br>
+      title={Ambiguous Images With Human Judgments for Robust Visual Event Classification},<br>
+      author={Sanders, Kate and Kriz, Reno and Liu, Anqi and Van Durme, Benjamin}<br>
+      }</code><br></div></div>
+
+      <b>We encourage researchers to review the limitations and ethical considerations regarding this dataset discussed in <a class="link" href=https://openreview.net/forum?id=6Hl7XoPNAVX>Section 6 of the paper</a>.</b><br><br><br>
+    </div>
+  </div>
+  </div>
+</div>
+  </body>
+<script>
+  // When the user scrolls the page, execute myFunction
+window.onscroll = function() {myFunction()};
+
+// Get the header
+var header = document.getElementById("header");
+var im = document.getElementById("1");
+var headercontent = document.getElementById("headercontent");
+var column = document.getElementById("c1");
+var sticky = header.offsetTop;
+var sticky2 = im.offsetTop - 200;
+
+var test = document.getElementById("testc");
+
+
+// Get the offset position of the navbar
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+    var arr = document.getElementById("arrow");
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+    headercontent.classList.add("stickytext");
+    arr.classList.add("hide");
+  } else {
+    header.classList.remove("sticky");
+    headercontent.classList.remove("stickytext");
+    arr.classList.remove("hide");
+  }
+  if (window.pageYOffset > sticky2) {
+    column.classList.add("stickycolumn");
+  } else {
+    column.classList.remove("stickycolumn");
+  }
+
+
+
+  var A = document.getElementById("introduction");
+  var positionA = A.getBoundingClientRect();
+  var AM = document.getElementById("am");
+  var B = document.getElementById("dataset");
+  var positionB = B.getBoundingClientRect();
+  var BM = document.getElementById("bm");
+  var C = document.getElementById("applications");
+  var positionC = C.getBoundingClientRect();
+  var CM = document.getElementById("cm");
+  var D = document.getElementById("addinfo");
+  var positionD = D.getBoundingClientRect();
+  var DM = document.getElementById("dm");
+
+  if (positionD.bottom <= window.innerHeight * .5) {
+    AM.classList.remove("highlight");
+    BM.classList.remove("highlight");
+    CM.classList.remove("highlight");
+    DM.classList.add("highlight");
+  } else if (positionC.bottom <= window.innerHeight * .5) {
+    AM.classList.remove("highlight");
+    BM.classList.remove("highlight");
+    CM.classList.add("highlight");
+    DM.classList.remove("highlight");
+  } else if (positionB.bottom <= window.innerHeight * .5) {
+    AM.classList.remove("highlight");
+    BM.classList.add("highlight");
+    CM.classList.remove("highlight");
+    DM.classList.remove("highlight");
+  } else if (positionA.bottom <= window.innerHeight * .5) {
+    AM.classList.add("highlight");
+    BM.classList.remove("highlight");
+    CM.classList.remove("highlight");
+    DM.classList.remove("highlight");
+  }
+}
+
+var i1 = document.getElementById("i1");
+i1.im = document.getElementById("b1");
+i1.l = document.getElementById("l1");
+i1.addEventListener("mouseover", hfn);
+i1.addEventListener("mouseout", ofn);
+
+var i2 = document.getElementById("i2");
+i2.im = document.getElementById("b2");
+i2.l = document.getElementById("l2");
+i2.addEventListener("mouseover", hfn);
+i2.addEventListener("mouseout", ofn);
+
+var i3 = document.getElementById("i3");
+i3.im = document.getElementById("b3");
+i3.l = document.getElementById("l3");
+i3.addEventListener("mouseover", hfn);
+i3.addEventListener("mouseout", ofn);
+function hfn(evt) {
+  evt.currentTarget.l.classList.add("hov");
+  evt.currentTarget.im.classList.add("ihov");
+}
+function ofn(evt) {
+  evt.currentTarget.l.classList.remove("hov");
+  evt.currentTarget.im.classList.remove("ihov");
+}
+</script>
+</html>
