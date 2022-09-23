@@ -7,6 +7,7 @@ html {
 }
 
   #title {
+      padding-top: 4%;
     margin: 0px 100px 0px 100px;
 /*    -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: #ff0000; */
@@ -17,14 +18,12 @@ body {
 }
 .top-container {
   text-align: center;
-  padding-top: 5%;
   width: 100%;
-
-background: rgb(0,73,135);
-background: linear-gradient(90deg, rgba(0,73,135,1) 0%, rgba(0,215,255,1) 100%);
+  background: rgb(0,73,135);
+  background: linear-gradient(90deg, rgba(0,73,135,1) 0%, rgba(0,215,255,1) 100%);
   color: white;
-  font-size: 80px;
-  height: 50vh;
+  font-size: 4.5vw;
+
 /*  transition: height 300ms linear; */
 }
 
@@ -32,7 +31,7 @@ background: linear-gradient(90deg, rgba(0,73,135,1) 0%, rgba(0,215,255,1) 100%);
   text-align:  center;
   font-size: 30px;
   color: white;
-  height:  100px;
+padding-bottom: 5px;
   width:  100%;
   top:  0;
 background: rgb(0,73,135);
@@ -76,7 +75,7 @@ z-index: 99;
   opacity: 0;
   transition: opacity 0.7s linear;
   height:  100vh;
-  margin: 200px 0px 0px 0px;
+  margin: 200px 0px 0px 10px;
   top:  0;
   z-index:  -1;
 
@@ -92,6 +91,9 @@ z-index: 99;
   margin-left: 25%;
   padding-top: 50px;
 }
+
+
+
 
 /* Clear floats after the columns */
 .row:after {
@@ -131,8 +133,9 @@ z-index: 99;
   border:  2px solid;
   color: rgba(0,73,135,.75); 
   transition: all 0.1s linear;
-  box-shadow: 1px 1px 1px;
+  box-shadow: 1px 1px 1px rgba(0,73,135,1);
   background-color: rgb(255,255,255,0.75); 
+  margin: 0px 20px 0px 20px; font-size:3vw; width:30vw; border-color:rgba(255,255,255,1); border-width: 3px; background-color:rgba(0,0,0,0);color:white
 }
 
 .btn2 {
@@ -140,24 +143,49 @@ z-index: 99;
   border:  2px solid;
   transition: all 0.1s linear;
   background-color: rgb(0,0,0,0); 
-
+margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white
 }
 
 .btn1:hover {
   color: rgba(0,73,135,1); 
   background-color: rgba(255,255,255,.9);
   box-shadow: 3px 3px 2px rgba(0,73,135,1);
+
 }
 
 .btn2:hover {
   box-shadow: 2px 2px 2px rgba(0,73,135,1);
-  background-color: rgb(255,255,255,0.15); 
+  background-color: rgba(255,255,255,.9);
+  color: rgba(0,73,135,1);
 }
 
 .navigation:visited {
   text-decoration: none;
   color: rgba(0,73,135,1);
 }
+
+.topnav {
+  padding-top: 2%;
+  font-size: 2vw;
+}
+
+.topnav:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.tnav {
+    color:  rgb(255,255,255,0.75); 
+    padding: 0% 2% 0% 2%;
+    font-weight: 500;
+  transition: color 0.3s linear;
+}
+
+.tnav:hover {
+  text-decoration: none;
+  color:  white;
+}
+
 
 .bim {
   opacity: 1;
@@ -311,6 +339,31 @@ td {
   transition: all 0.4s linear;
 }
 
+  #header-title {
+    font-size: 2vw;
+    }
+
+@media screen and (max-width: 800px) {
+    .topnav {
+  padding-top: 2%;
+  font-size: 4vw;
+}
+  .column {
+    display: none;
+  }
+  .maincolumn {
+    margin-left: 5%;
+    width: 90%;
+  }
+  #header-title {
+    font-size: 3vw;
+  }
+  .btn2 {
+    font-size:15px; width:150px;
+  }
+
+}
+
 
 </style>
   <head>
@@ -324,21 +377,27 @@ td {
   </head>
 
   <body>
-    <div class="arrow" id="arrow">▾</div>
     <div class="body">
     <div class="top-container">
+      <nav class="topnav">
+        <a class="tnav" href="#introduction">OVERVIEW</a>
+        <a class="tnav" href="#dataset">DATASET</a>
+        <a class="tnav" href="#applications">APPLICATIONS</a>
+        <a class="tnav" href="#addinfo">MISC</a>
+      </nav>
+
       <div class="titlewrap">
-      <p id="title">🦑 SQUID-E: Ambiguous Images for Robust Visual Event Classification</p>
+      <p id="title">🦑 SQUID-E: Ambiguous Images With Human Judgments for Robust Visual Event Classification</p>
     </div>
-      <button type="button" class="btn1" style="margin: 0px 20px 0px 20px; font-size:30px; width:300px; border-color:rgba(0,73,135,1); border-width: 0px; " id="p1" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
-      <button type="button" class="btn1" style="margin: 0px 20px 0px 20px; font-size:30px; width:300px; border-color:rgba(0,73,135,1); border-width: 0px; " id="d1" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
+      <button type="button" class="btn1" id="p1" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+      <button type="button" class="btn1"  id="d1" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
       <!--<p style="color: white;text-shadow: 2px 2px 2px rgba(0,73,135,1);font-size:40px;margin-top:30px">▼</p>-->
     </div>
 <div class="header" id="header">
   <div class="headercontent" id="headercontent">
-  <p style="margin-bottom: 0px">🦑 SQUID-E: Ambiguous Images for Robust Visual Event Classification</p>
-  <button type="button" class="btn2 " style="margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white" id="p2" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
-      <button type="button" class="btn2" style="margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white" id="d2" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
+  <p style="margin-bottom: 0px" id="header-title">🦑 SQUID-E: Ambiguous Images With Human Judgments for Robust Visual Event Classification</p>
+  <button type="button" class="btn2" id="p2" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+      <button type="button" class="btn2" id="d2" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
 </div>
 </div>
 
@@ -611,15 +670,12 @@ function isInViewport(element) {
 }
 // Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
 function myFunction() {
-    var arr = document.getElementById("arrow");
   if (window.pageYOffset > sticky) {
     header.classList.add("sticky");
     headercontent.classList.add("stickytext");
-    arr.classList.add("hide");
   } else {
     header.classList.remove("sticky");
     headercontent.classList.remove("stickytext");
-    arr.classList.remove("hide");
   }
   if (window.pageYOffset > sticky2) {
     column.classList.add("stickycolumn");
