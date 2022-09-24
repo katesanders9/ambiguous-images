@@ -234,6 +234,14 @@ margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white
   height: 100%;
   border-radius: 8px;
   margin-bottom: 40px;
+    padding-bottom: 180px;
+}
+
+.boxwrapc {
+  background-color: rgba(150,215,255,.5);
+  height: 100%;
+  border-radius: 8px;
+  margin-bottom: 40px;
 }
 
 .link {
@@ -247,6 +255,29 @@ margin: 0px 10px 0px 20px; font-size:20px; width:300px; border-color:white
 }
 
 .tc1 {
+  float: left;
+  font-size: 20px;
+  width: 33%;
+  text-align: center;
+}
+
+.tc1b {
+  float: left;
+  font-size: 20px;
+  width: 33%;
+  text-align: center;
+  font-size: 30px;
+}
+
+.tc1a {
+  float: left;
+  font-size: 20px;
+  text-align: center;
+  width:50%;
+  margin-bottom: 50px;
+}
+
+.tc1c {
   float: left;
   font-size: 20px;
   width: 33%;
@@ -344,6 +375,10 @@ td {
     }
 
 @media screen and (max-width: 800px) {
+.body {
+  overflow-x: hidden;
+
+}
     .topnav {
   padding-top: 2%;
   font-size: 4vw;
@@ -360,9 +395,83 @@ td {
   }
   .btn2 {
     font-size:15px; width:150px;
+    margin: 0px 5px 0px 5px;
   }
 
+  .header {
+    width: 100%;
+    top: 0px;
+  }
+
+  .sticky {
+  top:  0;
+  width:  100%;
 }
+
+
+
+#title {
+      padding-top: 4%;
+    margin: 20px 20px 20px 20px;
+
+}
+
+.maincolumn {
+  padding-top: 0px;
+}
+
+.top-container {
+  font-size: 6vw;
+
+/*  transition: height 300ms linear; */
+}
+
+.tc1a {
+  float: none;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+    margin-bottom: 0px;
+}
+
+.tc2 {
+  float: left;
+  font-size: 20px;
+  width: 5%;
+  text-align: center;
+  vertical-align: center;
+  height: 150px;
+  margin-top: 50px;
+}
+
+table {
+  font-size: 14px;
+}
+
+.gim {
+      width: 100%;
+  padding: 5px;
+
+}
+
+.tc1b {
+  font-size: 16px;
+}
+
+.boxwrap {
+    padding-bottom: 100px;
+}
+
+.tc1c {
+  float: none;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+}
+
+
 
 
 </style>
@@ -416,11 +525,11 @@ td {
 </nav>
   </div>
   <div class="maincolumn" id="c2">
-    <div class="space" id="1" style="height:0px"></div>
+
     <h1 class="h">Why ambiguous images?</h1>
     <div class="par">In our day to day lives, we encounter a wide range of visual input. Much of this input is <b>ambiguous</b>. For example, consider the three images shown below: These are three frames randomly selected from a <a class="link" href="https://www.youtube.com/watch?v=7wgDnx9iQfY">YouTube video of a birthday party</a>.<br><br> If asked if these images depict a birthday party, most humans could confidently give an answer. However, if a human was given just one of these images, <b>they might need to give a more detailed answer to effectively convey their judgments</b>. One option is to provide a quantitative "certainty score" that an image belongs to a specific classification:<br><br>
 
-    <div class="boxwrap">
+    <div class="boxwrapc">
     <b><div style="padding: 15px 20px 0px 20px">Hover over each image to see the median reported human confidence that each image belongs to a video of a birthday party.</div></b>
     <div class="im-banner"><div class="imwrap" id="i1"><div class="lab" id="l1">6%</div><img src="b1.png" class="bim" id="b1"></div><div class="imwrap" id="i2"><div class="lab" id="l2">81%</div><img src="b2.png" class="bim" id="b2"></div><div class="imwrap" id="i3"><div class="lab" id="l3">100%</div><img src="b3.png" class="bim" id="b3"></div></div> <div style="padding: 0px 10px 0px 10px"><div style="color: rgba(0,215,255,0);">.</div></div></div>
     Vision models do not typically have this capacity. Models are trained on tasks that assume a human could achieve perfect performance, and so <b>these models are not robust to ambiguous visual input</b>.<br><br>
@@ -438,7 +547,7 @@ td {
     </div>
 
 
-<div class="tc1" style="font-size:20px;width:50%">
+<div class="tc1a" style="font-size:20px;">
 
 <b>
   <ul>
@@ -447,7 +556,7 @@ td {
     <li>2,000 online videos scraped</li>
   </ul>
 </div>
-<div class="tc1" style="font-size:20px;width:50%">
+<div class="tc1a" style="font-size:20px;">
     <ul>
     <li>1,800 human-labeled images</li>
     <li>10,800 human judgments</li>
@@ -456,7 +565,7 @@ td {
 </div>
 </b>
 
-<div class="space" id="3"></div><br><br>
+
 
 <h3 class="h">Datset Construction</h3>
 
@@ -489,11 +598,11 @@ Turk. Annotators were provided with an event prompt and six images from the data
 
   </div>
 
-<div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  04%<br>👤💬  14%<br>👤💬  27%</div></div>
-  <div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  20%<br>👤💬  50%<br>👤💬  68%</div></div>
-  <div class="tc1"><br><div style="color:rgba(110,180,250,1);font-size: 30px;">👤💬  97%<br>👤💬  100%<br>👤💬  100%</div></div>
+<div class="tc1b"><br><div style="color:rgba(110,180,250,1);">👤💬  04%<br>👤💬  14%<br>👤💬  27%</div></div>
+  <div class="tc1b"><br><div style="color:rgba(110,180,250,1);">👤💬  20%<br>👤💬  50%<br>👤💬  68%</div></div>
+  <div class="tc1b"><br><div style="color:rgba(110,180,250,1);">👤💬  97%<br>👤💬  100%<br>👤💬  100%</div></div>
 
-<div class="space" id="3"></div><div class="space" id="3"></div><br>
+
 </div>
 
 
@@ -508,16 +617,15 @@ Turk. Annotators were provided with an event prompt and six images from the data
       Possible reasons for inter-annotator variance include:<br><br>
     </div>
 
-        <div class="tc1" style="padding:0px 20px 70px 20px"><img src="a1.png" style="height:100px;"><br><br><b>Visual Attention</b><br>
+        <div class="tc1c" style="padding:0px 20px 70px 20px"><img src="a1.png" style="height:100px;"><br><br><b>Visual Attention</b><br>
         <p style="font-size:14px;text-align:justify">A person’s visual attention can affect their perceptual input and uncertainty calculations. We hypothesize that this phenomenon affected the human judgments in our task, since the images in SQUID-E can often be classified as multiple event types depending on where an annotator’s visual attention is focused.</p></div>
 
-    <div class="tc1" style="padding:0px 20px 70px 20px"><img src="a2.png" style="height:100px;"><br><br><b>Background Knowledge</b><br>
+    <div class="tc1c" style="padding:0px 20px 70px 20px"><img src="a2.png" style="height:100px;"><br><br><b>Background Knowledge</b><br>
 <p style="font-size:14px;text-align:justify">Many images require an annotator to hold specific knowledge to classify them accurately, and so people may annotate these images differently depending on their personal knowledge bases. Necessary background knowledge is often cultural, or otherwise related to current events or history.</p></div>
 
-    <div class="tc1" style="padding:0px 20px 90px 20px;"><img src="a3.png" style="height:100px;"><br><br><b>Quantification Strategies</b><br><p style="font-size:14px;text-align:justify">The way humans calculate probability is inherently imperfect: Studies detail heuristics and psychological biases that influence human judgments that are not necessarily caused by external factors. This type of internal factor, divorced from visual input and knowledge bases, may affect annotator score discrepancy.</p></div></div><br><br>
+    <div class="tc1c" style="padding:0px 20px 90px 20px;"><img src="a3.png" style="height:100px;"><br><br><b>Quantification Strategies</b><br><p style="font-size:14px;text-align:justify">The way humans calculate probability is inherently imperfect: Studies detail heuristics and psychological biases that influence human judgments that are not necessarily caused by external factors. This type of internal factor, divorced from visual input and knowledge bases, may affect annotator score discrepancy.</p></div></div>
 
-    <div class="space" id="4"></div><div class="space" id="4"></div>
-    <br><br>
+    <div class="space" id="4">
 
     <h1 class="h" id="applications">Practical Applications</h1>
     <div class="par">
@@ -629,7 +737,7 @@ Turk. Annotators were provided with an event prompt and six images from the data
       <h3>Citation & Limitations</h3>
 
       If you find this work useful in your research, please consider citing the paper:<br><br>
-      <div class="boxwrap">
+      <div class="boxwrapc">
         <div class="codewrap">
       <code class="code1" style="font-size:14px">@article{sandersambiguous,<br>
       title={Ambiguous Images With Human Judgments for Robust Visual Event Classification},<br>
