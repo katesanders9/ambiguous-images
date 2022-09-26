@@ -510,14 +510,14 @@ table {
       <div class="titlewrap">
       <p id="title">🦑 SQUID-E: Ambiguous Images With Human Judgments for Robust Visual Event Classification</p>
     </div>
-      <button type="button" class="btn1" id="p1" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+      <button type="button" class="btn1" id="p1" onclick="location.href='https://openreview.net/pdf?id=6Hl7XoPNAVX';">PAPER</button>
       <button type="button" class="btn1"  id="d1" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
       <!--<p style="color: white;text-shadow: 2px 2px 2px rgba(0,73,135,1);font-size:40px;margin-top:30px">▼</p>-->
     </div>
 <div class="header" id="header">
   <div class="headercontent" id="headercontent">
   <p style="margin-bottom: 0px" id="header-title">🦑 SQUID-E: Ambiguous Images With Human Judgments for Robust Visual Event Classification</p>
-  <button type="button" class="btn2" id="p2" onclick="location.href='https://openreview.net/forum?id=6Hl7XoPNAVX';">PAPER</button>
+  <button type="button" class="btn2" id="p2" onclick="location.href='https://openreview.net/pdf?id=6Hl7XoPNAVX';">PAPER</button>
       <button type="button" class="btn2" id="d2" onclick="location.href='https://github.com/katesanders9/squid-e';">DATASET & CODE</button>
 </div>
 </div>
@@ -818,22 +818,22 @@ function myFunction() {
   var positionD = D.getBoundingClientRect();
   var DM = document.getElementById("dm");
 
-  if (positionD.bottom <= window.innerHeight * .5) {
+  if (positionD.bottom <= window.innerHeight * .65) {
     AM.classList.remove("highlight");
     BM.classList.remove("highlight");
     CM.classList.remove("highlight");
     DM.classList.add("highlight");
-  } else if (positionC.bottom <= window.innerHeight * .5) {
+  } else if (positionC.bottom <= window.innerHeight * .65) {
     AM.classList.remove("highlight");
     BM.classList.remove("highlight");
     CM.classList.add("highlight");
     DM.classList.remove("highlight");
-  } else if (positionB.bottom <= window.innerHeight * .5) {
+  } else if (positionB.bottom <= window.innerHeight * .65) {
     AM.classList.remove("highlight");
     BM.classList.add("highlight");
     CM.classList.remove("highlight");
     DM.classList.remove("highlight");
-  } else if (positionA.bottom <= window.innerHeight * .5) {
+  } else if (positionA.bottom <= window.innerHeight * .65) {
     AM.classList.add("highlight");
     BM.classList.remove("highlight");
     CM.classList.remove("highlight");
